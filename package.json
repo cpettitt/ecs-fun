@@ -1,0 +1,13 @@
+{
+  "name": "ecs-fun",
+  "version": "0.0.1",
+  "description": "Playing with entity component systems",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Pettitt",
+  "license": "MIT",
+  "devDependencies": {
+    "6to5-loader": "^3.0.0"
+  }
+}
