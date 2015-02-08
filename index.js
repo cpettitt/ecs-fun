@@ -1,5 +1,7 @@
 var PIXI = require("pixi");
 
+import {rnd} from "./src/util";
+import ai from "./src/system/ai";
 import renderer from "./src/system/renderer";
 
 var width = 800,
@@ -22,7 +24,7 @@ function game(domRoot) {
     }
 
     var systems = [
-      randomMove(),
+      ai(),
       renderer(domRoot, width, height)
     ];
 
@@ -56,27 +58,6 @@ function attachPosition(obj, x, y) {
     y: y
   };
   return obj;
-}
-
-function randomMove() {
-  return function(entities) {
-    entities.forEach(function(entity) {
-      if (entity.position) {
-        var deltaX = rnd(5) - 2,
-            deltaY = rnd(5) - 2;
-        if (rnd(2)) {
-          entity.position.x += deltaX;
-        } else {
-          entity.position.y += deltaY;
-        }
-      }
-    });
-    return entities;
-  };
-}
-
-function rnd(mult) {
-  return Math.floor(Math.random() * mult);
 }
 
 export default game;
