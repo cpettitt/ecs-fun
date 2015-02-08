@@ -18,7 +18,7 @@ function game(domRoot) {
     // Create our minions
     for (var i = 0; i < 200; ++i) {
       entities.push(attachPosition(attachSprite({}, "ch" + (rnd(7) + 1)),
-                    rnd(width), rnd(height)));
+                    rnd(width/2) + width/4, rnd(height/2) + height/4));
     }
 
     var systems = [
